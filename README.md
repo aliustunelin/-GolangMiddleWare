@@ -1,12 +1,12 @@
 # -GolangMiddleWare
 Middleware Development Implementation #Golang
-<br> <bold> We are using Gin-Gonic </bold>
+<br> <b> We are using Gin-Gonic </b>
 
 ![image](https://user-images.githubusercontent.com/40759486/187882367-5535fa4d-74b6-41d2-aada-b3876b698b67.png)
 
 
 
-Gin-Gonic is a light but high-performance HTTP-Web-Framework. Look another HTTP freamworks: https://deepsource.io/blog/go-web-frameworks/
+Gin-Gonic is a light but high-performance HTTP-Web-Framework.<br> Look another HTTP freamworks: https://deepsource.io/blog/go-web-frameworks/
 
 
 
