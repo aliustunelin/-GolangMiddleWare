@@ -8,21 +8,76 @@ Middleware Development Implementation #Golang
 
 Gin-Gonic is a light but high-performance HTTP-Web-Framework.<br> Look another HTTP freamworks: https://deepsource.io/blog/go-web-frameworks/
 
-
-
-Then the system is full capacity, of course only for 3 servers :) 
 <br>
-for testing we can run 5001, 5002, 5003 http-servers
-```
->> npx http-server -p 5002
->> npx http-server -p 5003
+- It offers Recover and Log support on the middleware side.
+- Of course we can write and add our own middleware component.
+- We can group routes so versioning is easy
+- for the project to be easy a MongoDB service will be used. But later I'm tired of that too. A docker image will be used directly
+ 
+ 
+ ```
+ #Our home folder and necessary go files are created
+>> cd project_dir
+>> touch main.go
 ```
 
-## Project Addition Development
-- For project development, it is possible to switch to http instead of TCP-IP.
-- Currently not ideal for use in any living system.
-- Concurrency, efficient memory usage etc. Many parts need improvements.
-- Many proxy load balancers can be found in Github.
+for management of gin-gonic and other modules
+```
+#same dir necessary
+>> go mod init book-worm-api
+```
 
+Installing the required go packages for gin-gonic and mongodb
+```
+>> go get -u github.com/gin-gonic/gin go.mongodb.org/mongo-driver
+```
+
+for MongoDB entagration
+```
+>> touch quote.go
+```
+
+
+for the CRUD Operation
+```
+>> touch quotedata.go
+```
+
+
+Documentation of annotation declarations in service methods with Swagger 2.0
+```
+>> go get -u github.com/swaggo/swag/cmd/swag
+```
+
+to produce documents Swagger 2.0
+```
+>> swag init _ "-GolangMiddleWare/docs"
+```
+
+many times Swag has error! 
+```
+export PATH=$(go env GOPATH)/bin:$PAT
+```
+
+also:
+```
+export PATH="/usr/bin:$PATH"
+```
+
+because your machine doesn't know Swagger...
+
+---------- <b> ---------------- </b> ---------
+
+Then
+
+DOCKER SIDE
+Running mongodb docker container and creating database
+```
+>> sudo docker run --name mongodb -e MONGO_INITDB_ROOT_USERNAME=scoth -e MONGO_INITDB_ROOT_PASSWORD=tiger -e MONGO_INITDB_DATABASE=bookworms -p 27017:27017 -d mongo:latest
+```
+
+
+
+Then then then; we are looking the code...
 
 
