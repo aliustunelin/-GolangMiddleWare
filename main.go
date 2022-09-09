@@ -39,10 +39,10 @@ func main() {
 }
 
 // Create godoc
-// @Summary Yeni bir kitap alıntısı ekler
+// @Summary Add NEw Book
 // @Produce json
 // @Accept json
-// @Param quote body quote true "Alıntı Bilgileri"
+// @Param quote body quote true 
 // @Success 200
 // @Failure 400
 // @Failure 500
@@ -68,12 +68,6 @@ func Create(c *gin.Context) {
    {array} is a quote list garranty
 */
 
-// GetAll godoc
-// @Summary Tüm kitap alıntılarını döndürür
-// @Produce json
-// @Success 200 {array} quote
-// @Failure 500
-// @Router /quote/ [get]
 func GetAll(c *gin.Context) {
 
 	var quoteList, err = GetQuotes()
@@ -82,5 +76,5 @@ func GetAll(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"msg": err})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"quotes": quoteList}) // HTTP 200 OK ile birlikte çekilen listeyi geri yolluyoruz.
+	c.JSON(http.StatusOK, gin.H{"quotes": quoteList}) 
 }
